@@ -57,8 +57,9 @@ class Sent extends React.Component{
         <tr key={note.f_id}>
         <td>{note.id}</td>
         <td>{note.subject}</td>  
-        <td>{rows2[i]}</td>   
-      <td>  {note.date}</td>
+        {/* <td>{rows2[i]}</td>    */}
+        <td>  {note.department}</td>
+      <td>  {note.date_of_creation}</td>
 
 
 
@@ -86,7 +87,7 @@ class Sent extends React.Component{
                         <tr>
                         <th>No.</th>
                         <th>Notesheet</th>
-                        <th>Sender's name</th>
+                        <th>Notesheet Sent to Which Email</th>
                         <th>Date</th>
                         <th colSpan={2} className='text-center'>Actions</th>
                         </tr>

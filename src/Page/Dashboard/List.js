@@ -66,8 +66,9 @@ class List extends React.Component{
         <tr key={note.f_id}>
         <td>{note.id}</td>
         <td>{note.subject}</td>  
-        <td>{rows2[i]}</td>   
-      <td>  {note.date}</td>
+        {/* <td>{rows2[i]}</td>    */}
+        <td>  {note.proposal_submitted_by_1}</td>
+      <td>  {note.date_of_creation}</td>
 
 
 
@@ -104,7 +105,7 @@ class List extends React.Component{
                         <tr>
                         <th>No.</th>
                         <th>Notesheet</th>
-                        <th>Sender's name</th>
+                        <th>NoteSheet Came From Which Email</th>
                         <th>Date</th>
                         <th colSpan={2} className='text-center'>Actions</th>
                         </tr>

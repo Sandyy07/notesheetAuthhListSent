@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Swal from 'sweetalert2';
 import Header from './Header';
+import HeaderS from './HeaderS';
+
 import List from './List';
 import Sent from './sent';
 import Create from './Create';
@@ -12,6 +14,7 @@ function Dashboard(){
 
     const [faculty, setFaculty] = useState(facultyData);
     const [isCreating, setIsCreating] = useState(false);
+    const [isSent, setIsSent] = useState(false);
 
     return (
         <div className='container'>
@@ -20,6 +23,12 @@ function Dashboard(){
             <>
                 <Header setIsCreating={setIsCreating} />
                 <List faculty={faculty} />
+            </>
+           )}
+               {!isCreating && (
+            <>
+                <HeaderS setIsCreating={setIsCreating} />
+                <Sent />
             </>
            )}
 
