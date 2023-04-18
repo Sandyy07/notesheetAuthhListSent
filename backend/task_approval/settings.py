@@ -147,10 +147,15 @@ REST_FRAMEWORK = {
 
 
 
-AUTH_USER_MODEL = 'users.User'
+
 # JWT_AUTH = {
 #     'JWT_RESPONSE_PAYLOAD_HANDLER': 'simple_rest.utils.custom_jwt_response_handler'
 # }
 
 # LOGIN_URL = 'login'
 # # LOGIN_REDIRECT_URL = 'localhost:3000'
+
+AUTH_USER_MODEL = 'users.User'
+
+
+

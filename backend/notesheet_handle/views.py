@@ -8,9 +8,12 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.views import TokenObtainPairView
+from django.contrib.auth import get_user_model
 
 from .searializers import *
 
+# User = get_user_model()
+from users.models import User
 
 # from rest_framework.views import APIView
 # from rest_framework.decorators import api_view
@@ -18,10 +21,26 @@ from .searializers import *
 # from rest_framework import permissions
 #
 
+
 class NoteSheetViewSet(viewsets.ModelViewSet):
     # class NoteSheetViewSet(generics.ListCreateAPIView):
-    queryset = NoteSheet.objects.all()
+    # queryset=NoteSheet.objects.filter(receiver_1 = request.user.name)
+    # queryset = NoteSheet.objects.all()
     serializer_class = NoteSheetSerializer
+     
+    # def get_queryset(request):
+    #     uu=User.objects.get(user=request.user)  
+    #     # current_user = request.user
+    #     queryset = NoteSheet.objects.filter(receiver_1 =uu.name)
+    #     return queryset
+    def get_queryset(self):
+        # user = User.user
+        # if not user.is_authenticated:
+        #     return NoteSheet.objects.none()
+
+        queryset = NoteSheet.objects.all()
+        return queryset
+        
 
 
 #

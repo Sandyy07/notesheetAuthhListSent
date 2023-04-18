@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './table.css'
 
+import {l}  from '../../pages/Loginn';
 
 class List extends React.Component{
 
     constructor(){
         super();
         this.state={
-            data:[], data2:[]
+            data:[], data2:[],
+           
         };
     }
+   
 
     fetchData(){
         fetch('http://127.0.0.1:8000/notesheet/')
@@ -47,6 +50,10 @@ class List extends React.Component{
 
    
     render(){
+     
+      
+        console.log(l)
+
 
         const noteSheet=this.state.data;
         const noteSheet2=this.state.data2;
@@ -55,7 +62,7 @@ class List extends React.Component{
           
         );
 
-        const rows=noteSheet.map((note,i)=>
+        const rows=noteSheet.filter((note)=>note.department===l).map((note,i)=>
         <tr key={note.f_id}>
         <td>{note.id}</td>
         <td>{note.subject}</td>  
@@ -104,6 +111,7 @@ class List extends React.Component{
                     </thead>
                     <tbody>
                       {rows}
+                      
                     </tbody>
                 </table>
             </div>

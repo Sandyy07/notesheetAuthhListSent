@@ -140,8 +140,8 @@ function Create({ faculty, setFaculty, setIsCreating }){
                 </div>
                  
                 <div className='input-box'>
-                    <label htmlFor='dept'>Department</label>
-                    <input id='dept' placeholder='department' type='text' name='department' value={depart} onChange={f => setDepart(f.target.value)} />
+                    <label htmlFor='dept'>Receivers Email</label>
+                    <input id='dept' placeholder='Receivers Email' type='text' name='department' value={depart} onChange={f => setDepart(f.target.value)} />
                 </div>
                 <div class="input-box">
                     <label htmlFor='sub'>Subject</label>
@@ -174,8 +174,8 @@ function Create({ faculty, setFaculty, setIsCreating }){
                     <input id='details' name='proposal_submitted_by' value={pro_sub} onChange={f => set_prosub(f.target.value)} type="text" placeholder="proposal_submitted_by" />
                 </div>
                 <div class="input-box">
-                    <label htmlFor='details'>Proposal Submitted By</label>
-                    <input id='details' name='proposal_submitted_by_1' value={pro_sub1} onChange={f => set_prosub1(f.target.value)} type="text" placeholder="proposal_submitted_by_1" />
+                    <label htmlFor='details'>YourEmail</label>
+                    <input id='details' name='proposal_submitted_by' value={pro_sub1} onChange={f => set_prosub1(f.target.value)} type="text" placeholder="YourEmail" />
                 </div>
 
               

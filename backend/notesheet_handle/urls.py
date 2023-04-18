@@ -4,7 +4,7 @@ from . import views
 from .views import *
 
 router = routers.DefaultRouter()
-router.register(r'notesheet', views.NoteSheetViewSet)
+router.register(r'notesheet', views.NoteSheetViewSet,basename='notesheet')
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [

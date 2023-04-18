@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import List from "../Page/Dashboard/List.js";
+import Dashboard from "../Page/Dashboard/index.js";
 // import Home from "./pages/Home";
 
 const Home = (props) => {
@@ -9,7 +9,7 @@ let p;
         // console.log(props.name)
         p=(
             
-            <List/>
+            <Dashboard/>
         )
     }
     else { 
@@ -22,7 +22,7 @@ let p;
     return (
        
         <div>
-            
+        
            {p}
            {/* {props.name ? <List/> : "Currently You are not Logged In"} */}
         </div>

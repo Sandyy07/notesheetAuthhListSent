@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Navigate  } from "react-router-dom"
 
+// let gN="HoD";
 // const Register = () => {
 //   const [name, setName] = useState("")
 //   const [email, setEmail] = useState("")
@@ -108,7 +109,6 @@ import { Navigate  } from "react-router-dom"
 
 
 
-
   const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -116,7 +116,7 @@ import { Navigate  } from "react-router-dom"
 
     const submit= async(e)=>{
       e.preventDefault();
-      await fetch("http://localhost:8000/api/register", {
+    const c=  await fetch("http://localhost:8000/api/register", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
@@ -125,12 +125,20 @@ import { Navigate  } from "react-router-dom"
                 password
               })
             });
+            const content=await c.json();
+          //  console.log(content)
            setRedirect(true);
+
+         
     }
+
+   
     if(redirect){
     return <Navigate  to="/login"/>;
     }
+   
   return (
+    
     <form onSubmit={submit}>
       <h1 className="h3 mb-3 fw-normal">Please register</h1>
 
@@ -138,7 +146,7 @@ import { Navigate  } from "react-router-dom"
         className="form-control"
         placeholder="Name"
         required onChange={e => setName(e.target.value)}
-      />
+      />    
 
       <input
         type="email"
@@ -158,7 +166,11 @@ import { Navigate  } from "react-router-dom"
         Submit
       </button>
     </form>
+   
+    
   )
 }
-
+// gN="HoD"
+// console.log(gN);
 export default Register
+// export {gN}

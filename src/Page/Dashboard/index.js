@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Swal from 'sweetalert2';
 import Header from './Header';
 import List from './List';
+import Sent from './sent';
 import Create from './Create';
 import Approve from './Approve';
 

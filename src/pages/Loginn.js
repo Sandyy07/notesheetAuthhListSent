@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Navigate } from "react-router-dom"
 
+var l="";
 // const Login = props => {
 //   const [email, setEmail] = useState("")
 //   const [password, setPassword] = useState("")
@@ -123,16 +124,23 @@ const response = await fetch("http://localhost:8000/api/login", {
   })
 });
 
+
 const content = await response.json();
+
+
 setRedirect(true);
-props.setName(content.name);
-
+props.setName(content.email);
+const a =content.email
+l=a;
+console.log(a)
+console.log(l)
 }
-
-// console.log(redirect);
+  
+// console.log(storedEmail);
 if(redirect==true){
   return (<Navigate  to="/"/>);
   }
+  // storedEmail = localStorage.getItem('email')
   return (
     
     <form onSubmit={submit}>
@@ -162,3 +170,4 @@ if(redirect==true){
  
 
 export default Loginn;
+export {l};
